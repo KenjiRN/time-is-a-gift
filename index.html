@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whats your time?</title>
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    <style>
+        body {
+            
+            background-image: url('2020.gif');
+            
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'New Tegomin', serif;
+            text-align: center;
+            
+            }
+
+        .container {
+            text-align: center;
+            padding: 0px;
+            
+            }
+
+        .page-title {
+            color: #ffffff;
+            margin: 0 0 5px;
+            
+            }
+
+        .page-subtitle {
+            color: #ffffff;
+            margin-top: 10px;
+            font-size: 20px;
+            }
+
+        .page-logo {
+            width: 100px;
+            }
+
+        .alura-logo {
+            width: 40px;
+            position: absolute;
+            top: 10px;
+            right:10px;
+            }
+
+
+        fieldset.grupo {
+
+            background-color: black;
+            font-family: Times, serif;
+            font-size: 1em;
+            color: white;
+            margin-left: 40%;
+            
+            margin-top: 0%;
+            justify-content: left;
+            border-radius:5px;
+            margin-bottom:1em;
+            float: center;
+            margin-right: 1em;
+            border: 0px;
+            opacity: 80%;
+            
+            width: 100px;
+            height: 180px;
+            padding: 30px;
+            
+        }
+        .hahaha{
+            
+            color: #3f3;
+            animation-duration: 8s;
+            animation-name:cor_fonte;
+            animation-iteration-count: infinite; 
+            
+            
+        }
+        a{
+            font-size: 20px;
+            text-align:center ;
+            font-family: 'New Tegomin', serif;
+            animation-duration: 2s;
+            animation-name:brilho;
+            animation-iteration-count: infinite;
+            text-decoration: none;
+            color: white;
+            
+        }
+        .imge{
+            width: 20px;
+            height: 20px;
+        }
+        @keyframes cor_fonte{  
+            0, 100%{color: #0ff}
+            25%{color: #f0f}
+            50%{color:#06f}
+            75%{color:#fff}
+        }
+        @keyframes brilho{
+            50%{text-shadow: 0px 0px 9px}
+            
+        }
+        .pp{ 
+            font-size: 20px;
+            font-family: 'New Tegomin', serif;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">
+            Time converter
+        </h1>
+        <p class="page-subtitle">
+            “Não devemos nos questionar porque algumas coisas nos acontecem e sim o que podemos fazer com o tempo que nos é dado.” 🧙
+        </p>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt="">
+      </div>
+        <a href="https://alura.com.br/" target="_blank">
+          <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+          </a>
+  
+    <form name="calcform" method="GET" action="">
+         <fieldset class="grupo">
+              
+              <label for="idade">Quantos anos você tem?</label><br>
+              <input type="text"name="idade" id="idade"placeholder="Digite aqui sua idade"><br><br>
+  
+              <label for="conversor_idade">Quantos tempo você já viveu em:</label><br>
+              <select name="conversor_idade" id="conversor_idade"><br>
+                  <option value="dias">Dias</option>
+                  <option value="horas">Horas</option>
+                  <option value="minutos">Minutos</option>
+                  <option value="segundos">Segundos</option>
+                  
+              </select><br><br>
+  
+              
+  
+              <label for ="res">Resultado</label><br>
+              <input type="text" name="res" id="res" >
+       
+             <input type="button" value="Calcular" class="botao" onclick="calcular(document.calcform.conversor_idade.value)">
+              
+         </fieldset class="grupo">
+     </form>
+     <section class="hahaha">
+        <p class="pp">Kenji Rocha Nakajima</p>
+        <a href="https://github.com/kenjirn">
+            <img class="imge" src="https://www.flaticon.com/svg/vstatic/svg/214/214513.svg?token=exp=1618071820~hmac=b036d6a575295a82d135de3f7acb7d49"> < GitHub >
+          </a>
+      <a href="https://www.instagram.com/kenjirn/">
+        <img class="imge" src="https://www.flaticon.com/svg/vstatic/svg/179/179328.svg?token=exp=1618072543~hmac=8101df888522b9a28e070f5f9311dc27"> < Instagram >
+      </a>
+      <a href="https://www.linkedin.com/in/kenjinakajima/">
+        <img class="imge" src="https://www.flaticon.com/svg/vstatic/svg/145/145807.svg?token=exp=1618072621~hmac=b99187139e3bd3af1118beee713677f0"> < Linkedin >
+      </a>
+    </section>
+    <script>
+        function calcular(conversor_idade) {
+            var idade = document.calcform.idade.value
+        
+
+        if(conversor_idade == "dias")
+        {
+            var res= parseFloat(idade) * 365;
+
+        }else if(conversor_idade == "horas"){
+
+            var res = parseFloat(idade) * 8760;
+
+        }else if(conversor_idade == "minutos"){
+            var res = parseFloat(idade) * 	525600;
+
+
+        }else if(conversor_idade == "segundos"){
+
+            var res = parseFloat(idade) * 31536000;
+
+        }
+        document.calcform.res.value=res.toFixed();
+    }
+
+
+
+
+    </script>
+</body>
+</html>
